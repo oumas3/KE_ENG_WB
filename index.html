@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanouni Engineering</title>
+  <link rel="icon" href="images/logo-kanouni-1-3.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<!--
+<script>
+  /*
+  (function () {
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your public key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
+      function () {
+        alert("Message envoyé avec succès !");
+        document.getElementById("contact-form").reset();
+      },
+      function (error) {
+        alert("Erreur lors de l'envoi : " + JSON.stringify(error));
+      }
+    );
+  });
+  */
+</script>
+-->
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.fade-in-section').forEach(section => {
+    observer.observe(section);
+  });
+</script>/*
+<script>
+  const cursor = document.createElement('div');
+  cursor.classList.add('custom-cursor');
+  document.body.appendChild(cursor);
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  document.querySelectorAll('a, button, .hover-target').forEach((el) => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+</script>
+
+
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+ <a href="index.html">
+  <img src="images/logo-kanouni-1-3.png" alt="Logo" class="logo" />
+</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html" class="active" >Accueil</a></li>
+          <li><a href="#services">À propos de nous</a></li>
+          <li><a href="#mission">Notre mission</a></li>
+          <li><a href="#specialite">Notre spécialité</a></li>
+          <li><a href="#contact">Contactez-nous</a></li>
+        </ul>
+      </nav>
+      <div class="social">
+        <a href="https://www.instagram.com/kanouniengineering/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/kanouni-engineering/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:bet.kanouni.engineering@gmail.com"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>KANOUNI ENGINEERING</h1>
+      <h2>BUREAU D’ÉTUDES</h2>
+    </div>
+  </section>
+<!-- About Section -->
+<section class="about" id="mission">
+  <div class="container">
+    <h2 class="section-title">🎯 Notre Mission</h2>
+    <p class="mission-text">
+      <strong>Kanouni Engineering S.A.R.L</strong>, bureau d’études basé à <strong>Safi</strong>, vous accompagne dans tous vos projets de construction grâce à des solutions <strong>innovantes</strong> et <strong>performantes</strong>.
+      <br><br>
+      Chez <strong>KANOUNI ENGINEERING</strong>, votre bureau d’études techniques de confiance, spécialisé dans les domaines du <strong>bâtiment</strong> et des <strong>infrastructures</strong>.
+      <br><br>
+      📈 <strong>Notre force</strong> : des solutions techniques rigoureuses, efficaces et innovantes.
+      <br><br>
+      Basé à <strong>Safi</strong>, nous intervenons sur l’ensemble du <strong>territoire marocain</strong> pour vous accompagner dans vos projets de construction, de rénovation et d’optimisation énergétique.
+    </p>
+  </div>
+</section>
+
+  </section>
+<section id="about-ceo" class="ceo-section fade-in-section">
+  <div class="container ceo-container">
+    <div class="ceo-image">
+      <img src="images/ceo.jpg" alt="Fondatrice - Kanouni Engineering">
+    </div>
+    <div class="ceo-text">
+      <h2>👤 SUR MOI</h2>
+      <h3>Ingénieure fondatrice – Expertise et engagement</h3>
+      <p>
+        Je suis <strong>ingénieure spécialisée en génie civil</strong> avec une solide expérience dans le secteur du
+        bâtiment et des infrastructures. J’ai fondé <strong>KANOUNI ENGINEERING</strong> avec la volonté de
+        proposer une ingénierie moderne, rigoureuse et orientée performance, pour répondre aux
+        besoins des projets les plus ambitieux.
+      </p>
+      <p><strong><img src="images/target.png" alt="Objectif" class="icon"> Mon objectif :</strong> vous offrir un accompagnement personnalisé , une maîtrise technique à
+        chaque étape, et des solutions conformes aux normes les plus exigeantes.
+      </p>
+
+          </div>
+  </div>
+</section>
+
+
+<section id="services" class="services-section">
+  <div class="services-container">
+    <h2 class="section-title">KANOUNI ENGINEERING :<br> L'excellence au service de vos projets</h2>
+    <p class="section-description">
+      Nous sommes un bureau d’études techniques pluridisciplinaire qui intervient dans les domaines suivants 
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/elec.png" alt="Électricité">
+        <h4>Électricité</h4>
+        <p>Courants forts/faibles, GTB, sécurité incendie</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/fan.png" alt="CVC">
+        <h4>CVC</h4>
+        <p>Chauffage, climatisation, ventilation, efficacité énergétique</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/work.png" alt="Plomberie">
+        <h4>Plomberie</h4>
+        <p>Réseaux d’eau sanitaire, eaux usées, pluviales</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/brickwall.png" alt="Structure">
+        <h4>Structure</h4>
+        <p>Études béton, acier, bois, stabilité, diagnostics</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/construction-site.png" alt="BIM">
+        <h4>BIM</h4>
+        <p>Maquettes 3D, coordination, simulation énergétique</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section  id="specialite"  class="specialty">
+  <h2 class="section-title">NOTRE SPÉCIALITÉ</h2>
+
+  <div class="specialty-cards">
+    <!-- Card 1 -->
+    <div class="card card-bim">
+      <div class="card-content">
+        <h3><span>LA</span><br><strong>TECHNOLOGIE</strong><br><strong>BIM</strong></h3>
+        <hr>
+        <h4>Building Information Modeling</h4>
+        <p>Qui permet de créer des maquettes 3D intelligentes pour concevoir, visualiser, simuler et gérer efficacement chaque étape de vos projets.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card card-autodesk">
+      <div class="card-content">
+        <h3><strong>AUTODESK</strong></h3>
+        <hr>
+        <p>Grâce aux outils Autodesk, nous assurons une collaboration fluide entre les différents intervenants et facilitons la prise de décision, tout en garantissant qualité, maîtrise des coûts et respect des délais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section class="savoir-faire">
+  <div class="savoir-content">
+    <div class="savoir-left">
+      <h2>SAVOIR–FAIRE</h2>
+      <div class="underline"></div>
+      <p>Avec une ingénierie d’excellence et une écoute attentive, notre priorité est la satisfaction totale de nos clients.</p>
+      <p>Kanouni Engineering, c’est l’alliance entre technologie, expertise et engagement pour faire de chaque projet une réussite.</p>
+      <p class="bottom-text">Notre savoir-faire repose sur des années d’expérience, une ingénierie de qualité et un engagement total pour la réussite de vos projets.</p>
+    </div>
+    <div class="savoir-right">
+      <img src="images/untitled-23-1-4.png" alt="Savoir-faire Icon" class="icon" />
+      <img src="images/stars.svg" alt="Rating" class="stars" />
+    </div>
+  </div>
+</section>
+<section class="nos-clients">
+  <h2>NOS CLIENTS</h2>
+  <p class="intro">
+   <strong>Des partenaires de confiance dans divers secteurs</strong>
+  </p>
+
+  <p>
+    Nous travaillons en étroite collaboration avec des maîtres d’ouvrage publics et privés, des promoteurs immobiliers, des collectivités territoriales, ainsi que des entreprises de différentes tailles.
+  </p>
+
+  <p>
+    Nos réalisations couvrent un large éventail de projets, notamment :
+  </p>
+
+  <ul>
+    <li> Études techniques pour des bâtiments résidentiels et tertiaires</li>
+    <li> Suivi de chantiers pour des infrastructures publiques</li>
+    <li>Solutions d’optimisation énergétique pour des projets innovants</li>
+  </ul>
+
+  <p class="contact-link">
+    Vous souhaitez faire partie de nos références ?
+    <a href="#contact">Contactez-nous dès aujourd’hui</a>
+  </p>
+</section>
+
+
+
+<section id="contact" class="contact-section">
+  <div class="container contact-wrapper">
+
+    <!-- Contact Form Side -->
+    <div class="contact-left">
+      <h2>📨 Entrer en contact</h2>
+      <p>Vous avez un projet ? Une question technique ? Remplissez le formulaire ci-dessous et notre équipe vous répondra dans les plus brefs délais.</p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" name="user_name" id="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" name="user_email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Numéro de téléphone</label>
+          <input type="tel" name="user_phone" id="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Objet</label>
+          <input type="text" name="subject" id="subject" />
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer</button>
+      </form>
+    </div>
+
+    <!-- Google Map Side -->
+    <div class="contact-right">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.4435578139494!2d-9.246154924355475!3d32.29898717486206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda91cb451ae2e4f%3A0x47e250b2c9f16f45!2sSafi%2C%20Morocco!5e0!3m2!1sen!2sma!4v1689267225795!5m2!1sen!2sma"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top container">
+      <div class="footer-contact">
+        <h3>CONTACTEZ-NOUS</h3>
+        <p class="phone">+212 661 757 248 | +212 600 022 397</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/kanouniengineering/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/kanouni-engineering/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:bet.kanouni.engineering@gmail.com"><i class="far fa-envelope"></i></a>
+        </div>
+        <p class="address">
+          Immeuble Omar, 3e étage, Appartement 28<br />
+          Rue Idriss, Quartier Plateau, Ville Nouvelle<br />
+          46000 Safi – Maroc
+        </p>
+        <p>Horaires : Lundi – Vendredi : 9h00 – 18h00 | Samedi : 9h00 – 13h00</p>
+      </div>
+      <div class="footer-nav">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#specialite">Notre spécialité</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kanouni Engineering. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+
+<a href="#" class="back-to-top" title="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+
+</body>
+</html>
