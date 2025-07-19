@@ -17,9 +17,9 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 15px;
-  height: 15px;
-  background-color: #f9c700;
+  width: 25px;
+  height: 25px;
+  background-color: #f5c000;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -43,78 +43,92 @@ html, body {
 
 /* Header */
 .header {
-  background: #fff;
-  padding: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: white; /* or black if you want dark */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+    padding: 22px 0;
+
 }
 
-.navigation ul {
-  list-style: none;
-  padding: 0;
+/* Container inside header */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navigation ul li {
-  margin: 8px 0;
-}
-
-.navigation a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.navigation a:hover {
-  color: #fff;
-}
-.nav a.active {
-  color: #f5c000;
-  font-weight: 700;
-}
-
-
-
+/* Logo */
 .logo {
-  height: 50px;
+  height: 56px;
   cursor: pointer;
 }
 
+/* Navigation */
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 45px; /* more spacing between nav items */
   padding: 0;
+  margin: 0;
 }
 
 .nav a {
   text-decoration: none;
   color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px; /* slightly smaller text */
   font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
 }
 
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f5c000;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover,
 .nav a.active {
-  font-weight: 700;
+  color: #f5c000;
+  font-weight: 600;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social a {
+  margin-left: 18px;
+  color: #000;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social a:hover {
   color: #f5c000;
 }
 
-.social a {
-  margin-left: 15px;
-  color: #000;
-}
 
 /* Hero Section */
 .hero {
-  background: url('images/node-2.png') no-repeat center center/cover;
-  height: 600px;
+  background: url('images/acc.png') no-repeat center center/cover;
+  height: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +136,6 @@ html, body {
 }
 
 .hero .overlay {
-  background: rgba(0, 0, 0, 0.5);
   padding: 50px;
   text-align: center;
 }
@@ -138,11 +151,24 @@ html, body {
   font-size: 24px;
   margin-top: 10px;
 }
+.inline-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.white-icon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
 /* About Section */
 .about {
   background: #f5c000;
-  padding: 90px 60px;
+  padding: 80px 50px;
   background-image: url('images/architect-design-1-4.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -253,12 +279,12 @@ html, body {
 
 /* Typography & Layout for Cards */
 .card p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 .card h3 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 10px;
@@ -271,8 +297,7 @@ html, body {
 }
 
 .card h4 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
@@ -284,12 +309,12 @@ html, body {
 /* Backgrounds */
 .card-bim {
     background-repeat: no-repeat;
-  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/node-4.svg");
+  background:  url("images/fr.png");
   background-size: cover;
 }
 
 .card-autodesk {
-  background: linear-gradient(to right, rgba(249, 199, 0, 0.35), rgba(235, 218, 150, 0.25)), url("images/node-11.png");
+  background: linear-gradient(to right, rgba(249, 199, 0, 0.35), rgba(235, 218, 150, 0.25)), url("images/fr2.png");
   background-size: cover;
   background-position: center;
 }
@@ -877,6 +902,33 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+
+.ceo-title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ceo-title .quote {
+  font-size: 60px;
+  color: #f9c700; /* Yellow quote marks */
+  font-family: Georgia, serif;
+  line-height: 0;
+}
+
+.ceo-title .title-text {
+  color: #111; /* Black text */
+  font-weight: 800;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
 
 
 
