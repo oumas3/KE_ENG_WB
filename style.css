@@ -11,6 +11,17 @@ html, body {
   box-sizing: border-box;
 }
 
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; /* Add spacing between logo and nav */
+}
+
+.logo {
+  height: 70px;
+  margin-right: 30px; /* Additional spacing if needed */
+}
 
 
 .custom-cursor {
