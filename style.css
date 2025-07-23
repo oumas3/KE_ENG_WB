@@ -38,9 +38,7 @@ html, body {
   z-index: 9999;
 }
 
-.cursor-hover {
-  transform: translate(-50%, -50%) scale(2);
-}
+
 
 
 .container {
