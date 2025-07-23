@@ -34,37 +34,37 @@
 </script>
 -->
 
+<!-- Load EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in');
-        observer.unobserve(entry.target); // Animate only once
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("IN3LFSMcCT3SKtRXt"); // ✅ Your EmailJS public key
 
-  document.querySelectorAll('.fade-in-section').forEach(section => {
-    observer.observe(section);
-  });
-</script>/*
-<script>
-  const cursor = document.createElement('div');
-  cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
+    const form = document.getElementById("contact-form");
 
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-  document.querySelectorAll('a, button, .hover-target').forEach((el) => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        // Add current date/time to hidden input
+        const now = new Date().toLocaleString();
+        document.getElementById("form-time").value = now;
+
+        emailjs.sendForm("service_700uewl", "template_f35hdva", this)
+          .then(() => {
+            alert("✅ Message envoyé avec succès !");
+            form.reset(); // clear the form
+          }, (error) => {
+            console.error("EmailJS Error:", error);
+            alert("❌ Échec de l'envoi. Veuillez vérifier la configuration.");
+          });
+      });
+    } else {
+      console.error("❌ Form with ID 'contact-form' not found.");
+    }
   });
 </script>
+
 
 
 
@@ -78,7 +78,7 @@
 </a>
       <nav class="nav">
         <ul>
-          <li><a href="index.html" class="active" >Accueil</a></li>
+          <li><a href="index.html" >Accueil</a></li>
           <li><a href="#mission">Notre mission</a></li>
           <li><a href="#about-ceo">À propos de la fondatrice</a></li>
           <li><a href="#services">À propos de nous</a></li>
@@ -88,8 +88,8 @@
       </nav>
       <div class="social">
         <a href="https://www.instagram.com/kanouniengineering/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/kanouni-engineering/"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:bet.kanouni.engineering@gmail.com"><i class="far fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/kanouni-engineering-06b827375/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:contact@kanouniengineering.ma"><i class="far fa-envelope"></i></a>
       </div>
     </div>
   </header>
@@ -97,13 +97,23 @@
 
   <!-- Hero Section -->
   <section class="hero">
-  
-  </section>
+      <div class="overlay">
+        <div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="images/mp.mp4" type="video/mp4">
+  </video>
+</div>
+
+    <!--<div class="hero-content">
+      <h1>KANOUNI ENGINEERING</h1>
+      <h2> VOTRE BUREAU D’ÉTUDES</h2>
+    </div>-->
+  </div>
+  </section> 
 <!-- About Section -->
 <section class="about" id="mission">
   <div class="container">
     <h2 class="section-title">
-      <img src="images/target.png" alt="Mission Icon" class="white-icon" />
       <span>Notre Mission</span>
     </h2>
     <p class="mission-text">
@@ -265,23 +275,23 @@
 
     <!-- Contact Form Side -->
     <div class="contact-left">
-      <h2>📨 Entrer en contact</h2>
+      <h2>Entrer en contact !</h2>
       <p>Vous avez un projet ? Une question technique ? Remplissez le formulaire ci-dessous et notre équipe vous répondra dans les plus brefs délais.</p>
 
       <form id="contact-form">
         <div class="form-group">
           <label for="name">Nom complet</label>
-          <input type="text" name="user_name" id="name" required />
+          <input type="text" name="name" id="name" required />
         </div>
 
         <div class="form-group">
           <label for="email">Adresse e-mail</label>
-          <input type="email" name="user_email" id="email" required />
+          <input type="email" name="email" id="email" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Numéro de téléphone</label>
-          <input type="tel" name="user_phone" id="phone" />
+          <input type="tel" name="phone" id="phone" />
         </div>
 
         <div class="form-group">
@@ -293,6 +303,7 @@
           <label for="message">Message</label>
           <textarea name="message" id="message" rows="5" required></textarea>
         </div>
+          <input type="hidden" name="time" id="form-time" />
 
         <button type="submit" class="submit-btn">Envoyer</button>
       </form>
@@ -318,8 +329,8 @@
         <p class="phone">+212 661 757 248 | +212 600 022 397</p>
         <div class="social-icons">
           <a href="https://www.instagram.com/kanouniengineering/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/kanouni-engineering/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:bet.kanouni.engineering@gmail.com"><i class="far fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/kanouni-engineering-06b827375/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:contact@kanouniengineering.ma"><i class="far fa-envelope"></i></a>
         </div>
         <p class="address">
           Immeuble Omar, 3e étage, Appartement 28<br />
