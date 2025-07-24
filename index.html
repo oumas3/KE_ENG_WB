@@ -49,6 +49,8 @@
  <a href="index.html">
   <img src="images/logo-kanouni-1-3.png" alt="Logo" class="logo" />
 </a>
+        <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+
       <nav class="nav">
         <ul>
           <li><a href="index.html" >Accueil</a></li>
@@ -71,7 +73,7 @@
   <!-- Hero Section -->
  <div class="video-background">
   <video autoplay muted loop playsinline>
-    <source src="images/mp.mp4" type="video/mp4">
+    <source src="images/mpp.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="video-gradient"></div>
@@ -80,7 +82,7 @@
 <section class="hero">
   <div class="hero-content">
     <h1>KANOUNI ENGINEERING</h1>
-    <h2>VOTRE BUREAU D’ÉTUDES</h2>
+    <h2>VOTRE BUREAU D’ÉTUDES TECHNIQUES</h2>
   </div>
 </section>
 <!-- About Section -->
@@ -113,9 +115,9 @@
     <div class="ceo-text">
        
       <h2 class="ceo-title">
-  <span class="quote">“</span>
-  <span class="title-text">SUR MOI</span>
-  <span class="quote">”</span>
+    <span class="quote">“</span>
+    <span class="title-text">SUR MOI</span>
+    <span class="quote">”</span>
 </h2>
 
       <h3>Ingénieure fondatrice – Expertise et engagement</h3>
@@ -310,7 +312,7 @@
           Rue Idriss, Quartier Plateau, Ville Nouvelle<br />
           46000 Safi – Maroc
         </p>
-        <p>Horaires : Lundi – Vendredi : 9h00 – 18h00 | Samedi : 9h00 – 13h00</p>
+        <p>Horaires : Lundi – Vendredi : 8h00 – 12h00 / 14h00 – 18h00 | Samedi : 9h00 – 13h00</p>
       </div>
       <div class="footer-nav">
         <h4>NAVIGATION</h4>
@@ -333,6 +335,21 @@
 
 <script src="cursor.js"></script>
 <script src="email.js"></script>
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  // Fermer le menu au clic sur un lien
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+  });
+</script>
+
 
 </body>
 </html>
